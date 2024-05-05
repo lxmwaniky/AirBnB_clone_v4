@@ -19,14 +19,14 @@ def close_db(error):
     storage.close()
 
 
-@app.route('/0-hbnb', strict_slashes=False)
+@app.route('/0-hbnb/', strict_slashes=False)
 def hbnb():
     """Renders the HBNB page with states, amenities, and places.
 
     This function retrieves all the states,
     amenities, and places from the storage
     and sorts them alphabetically. It then
-    renders the '100-hbnb.html' template,
+    renders the '0-hbnb.html' template,
     passing the sorted states, amenities, and places as arguments.
 
     Returns:
@@ -47,7 +47,7 @@ def hbnb():
 
     cache_id = str(uuid.uuid4())
 
-    return render_template('100-hbnb.html',
+    return render_template('0-hbnb.html',
                            states=st_ct,
                            amenities=amenities,
                            places=places)
